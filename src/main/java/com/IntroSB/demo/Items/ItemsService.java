@@ -1,6 +1,7 @@
 package com.IntroSB.demo.Items;
 
 import java.util.List;
+import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -20,6 +21,10 @@ public class ItemsService {
 	// READ
 	public List<ItemsModel> getCustomer() {
 	    return irepo.findAll();
+	}
+	
+	public Optional<ItemsModel> getItemById(long id) {
+		return irepo.findById(id);
 	}
 
 	// DELETE
